@@ -5,12 +5,9 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class AppActivity extends Activity {
 
@@ -59,32 +56,6 @@ public class AppActivity extends Activity {
             finish();
         }
     }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_app, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_about) {
-            Toast.makeText(this, "Developed by Erick M. Sprengel.\nContact: erick.sprengel@gmail.com", Toast.LENGTH_LONG).show();
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-
 
 
     public void goToFragment(int fragmentCode, Bundle args, boolean back ) {
@@ -140,4 +111,5 @@ public class AppActivity extends Activity {
     public void backFragment() {
         getFragmentManager().popBackStack();
     }
+
 }

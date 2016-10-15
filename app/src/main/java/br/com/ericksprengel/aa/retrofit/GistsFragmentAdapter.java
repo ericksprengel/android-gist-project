@@ -34,6 +34,11 @@ public class GistsFragmentAdapter extends BaseAdapter {
         this.notifyDataSetChanged();
     }
 
+    public void remove(Gist gist) {
+        mGists.remove(gist);
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getCount() {
         if (mGists == null) {
